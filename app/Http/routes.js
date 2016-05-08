@@ -12,7 +12,15 @@
 */
 const Route = use('Route')
 
-Route.get('/', 'HomeController.index')
+Route.get('/', 'HomeController.index');
+
+Route.get('/forgot_password', function * (request, response) {
+  response.send("Forgot password");
+});
+
+Route.get('/home', function * (request, response) {
+  response.send("Read ALL blogs");
+});
 
 Route.post('/new_user', function * (request, response) {
   response.send("Hello!");
