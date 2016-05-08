@@ -14,18 +14,23 @@
 	<div class="login-page">
 		<div class="container">
 			<div class="header">
-				<h1>Bloggly</h1>
+				<h1>Blog.ly</h1>
 				<span class="sub">Think. Write. Share.</span>
 			</div>
 			<form class="login">
 				<label for="user-name"><i class="fa fa-user" aria-hidden="true"></i>Username</label>
 				<input id="user-name" type="text" value="m-amaya" />
-				<label for="user-pass"><i class="fa fa-key" aria-hidden="true"></i>Password</label>
+				<label for="user-pass"><i class="fa fa-key" aria-hidden="true"></i>Password
+					<a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i>Forgot Password</a>
+				</label>
 				<input id="user-pass" type="password" value="password" />
-				<button id="login-submit-btn" type="submit">Login</button>
-				<a class="login-skip" href="#">
-					Continue without logging in <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-				</a>
+				<div class="login-buttons">
+					<button id="login-submit-btn" type="submit">Login</button>
+					<button id="login-newuser-btn" type="submit">Create New Account</button>
+					<a class="login-skip" href="#">
+						Continue without logging in <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+					</a>
+				</div>
 			</form>
 		</div>
 	</div>

@@ -13,7 +13,7 @@ module.exports = {
   | it is a reference of defined connections below in this file.
   |
   */
-  connection: Env.get('DB_CONNECTION', 'sqlite'),
+  connection: Env.get('DB_CONNECTION', 'psql'),
 
   /*
   |--------------------------------------------------------------------------
@@ -71,7 +71,7 @@ module.exports = {
       password: Env.get('MYSQL_PASSWORD', ''),
       database: Env.get('MYSQL_DATABASE', 'adonis')
     }
-  }
+  },
 
 /*
 |--------------------------------------------------------------------------
@@ -81,4 +81,14 @@ module.exports = {
 |  Feel free to define as many connections you like to define.
 |
 */
+  psql: {
+    client: 'pg',
+    connection: {
+      host: 'ec2-54-243-187-114.compute-1.amazonaws.com',
+      user: 'rasjsfjpbleefo',
+      password: '_YCisXmuU8lhUsKM7ZRPC1rG2t',
+      database: 'dfjfdpmp603pbg',
+      ssl: true
+    }
+  }
 }

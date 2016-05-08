@@ -23,7 +23,8 @@
     "adonis-lucid": "^2.0.5",
     "adonis-middleware": "^1.0.5",
     "normalize.css": "^4.1.1",
-    "ouch": "^0.2.0-beta"
+    "ouch": "^0.2.0-beta",
+    "pg": "^4.5.5"
   },
   "autoload": {
     "App": "./app"
