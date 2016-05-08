@@ -1,0 +1,65 @@
+@color-pink: #912F89;
+@color-purple: #722777;
+@color-purple-darker: darken(@color-purple, 10%);
+@color-purple-lighter: lighten(@color-purple, 40%);
+@color-white: #F2DCF4;
+
+@desktop-breakpoint: 760px;
+
+@import "./index.less";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	background: @color-white;
+
+	@media screen and (max-width: @desktop-breakpoint) {
+		font-size: 0.85em;
+	}
+
+	a {
+		color: @color-purple-darker;
+	}
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	padding: 8px;
+	background: @color-purple-darker;
+	width: 100%;
+	color: @color-purple-lighter;
+	border-top: 1px solid @color-purple-lighter;
+	font-size: 14px;
+
+	a {
+		color: @color-purple-lighter;
+	}
+
+	.framework-info {
+		float: right;
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	@media screen and (max-width: @desktop-breakpoint) {
+		.demo-info,
+		.framework-info {
+			display: block;
+			text-align: center;
+		}
+
+		.framework-info {
+			padding-top: 6px;
+			float: none;
+		}
+	}
+}

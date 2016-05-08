@@ -3,18 +3,41 @@
 	<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>Adonis - Framework for humans</title>
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/style.css">
+	<title>Bloggly</title>
+	<link rel="stylesheet" type="text/css" href="/normalize.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Arvo:700|Roboto:400,300,500,700|Kalam:400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/style.min.css">
+
 </head>
 <body>
+	<div class="login-page">
+		<div class="container">
+			<div class="header">
+				<h1>Bloggly</h1>
+				<span class="sub">Think. Write. Share.</span>
+			</div>
+			<form class="login">
+				<label for="user-name"><i class="fa fa-user" aria-hidden="true"></i>Username</label>
+				<input id="user-name" type="text" value="m-amaya" />
+				<label for="user-pass"><i class="fa fa-key" aria-hidden="true"></i>Password</label>
+				<input id="user-pass" type="password" value="password" />
+				<button type="submit">Login</button>
+				<a class="login-skip" href="#">
+					Continue without logging in <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+				</a>
+			</form>
+		</div>
+	</div>
 
-	<section>
-		<div class="__wrapper">
-			<img src="/logo_white.svg" class="__logo">
-			<p> Everything has beauty, but not everyone sees it. </p>
-		</div><!-- end wrapper -->
-	</section>
+	<footer>
+		<span class="demo-info">&copy; 2016 by <a href="https://github.com/m-amaya" target="_blank">m-amaya</a> under MIT license. For demonstration purposes only.</span>
+		<span class="framework-info">
+			<a href="http://adonisjs.com/" target="_blank"><i class="fa fa-share" aria-hidden="true"></i> Adonis v2.0.9</a>
+		</span>
+	</footer>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+	<script src="/bundle.min.js"></script>
 </body>
 </html>
