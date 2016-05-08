@@ -85,7 +85,9 @@
     if(errNo === 101) {
       $newUserSubmit.css({
         textDecoration: 'line-through',
-        cursor: 'not-allowed'
+        cursor: 'not-allowed',
+        color: '#722777',
+        background: '#4d1a51'
       });
     }
   };
