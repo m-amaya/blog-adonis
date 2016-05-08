@@ -1,0 +1,53 @@
+.notification {
+  background: rgba(red(@color-white), green(@color-white), blue(@color-white), 0.45);
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 1px solid @color-purple-darker;
+  border-radius: 4px;
+  box-shadow: inset 0 0 10px @color-purple-lighter;
+  text-align: center;
+  max-width: 300px;
+  z-index: 100;
+  font-size: 14px;
+
+  .title {
+    background: darken(@color-purple, 4%);
+    color: @color-white;
+    padding: 8px 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    i.fa {
+      float: right;
+      cursor: pointer;
+    }
+  }
+
+  .info {
+    color: @color-purple-darker;
+    padding: 8px 10px;
+  }
+
+  @media screen and (max-width: @desktop-breakpoint) {
+    position: relative;
+    right: 0;
+    .base-container;
+
+    .info {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+  }
+}
+
+.notification-enter {
+  opacity: 1;
+  animation: fadein 700ms;
+}
+
+@keyframes fadein {
+  from   { opacity: 0; transform: translateY(-20px); }
+  to     { opacity: 1; transform: translateY(0); }
+}

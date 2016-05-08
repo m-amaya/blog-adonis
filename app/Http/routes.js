@@ -12,10 +12,10 @@
 */
 const Route = use('Route')
 
-Route.get('/', 'HomeController.index');
-
-Route.get('/forgot_password', function * (request, response) {
-  response.send("Forgot password");
+Route.get('/', 'LoginController.login');
+Route.get('/forgot_password', 'LoginController.forgotPass');
+Route.post('/forgot_password/email', function * (request, response) {
+  response.send("Sent your email");
 });
 
 Route.get('/home', function * (request, response) {

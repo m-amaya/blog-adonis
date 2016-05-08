@@ -7,7 +7,20 @@
 
 @desktop-breakpoint: 760px;
 
+// Helpers
+
+.base-container {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 400px;
+}
+
+// Imports
+
 @import "./index.less";
+@import "./notification.less";
+
+// Base Styles
 
 * {
   box-sizing: border-box;
@@ -32,6 +45,10 @@ body {
 			text-decoration: underline;
 		}
 	}
+}
+
+.page {
+  padding-top: 22px;
 }
 
 footer {

@@ -1,0 +1,21 @@
+{% extends 'login' %}
+
+{% block title %}
+  Blog.ly | Forgot Password
+{% endblock %}
+
+{% block loginForm %}
+<h2>Forgot Password</h2>
+<span class="disclaimer">Your email will NOT be stored. Instead, you will be
+sent a one-time dummy email for demonstration purposes only.</span>
+
+<label for="user-email"><i class="fa fa-email" aria-hidden="true"></i>Your Email</label>
+<input id="user-email" type="email" />
+
+<div class="login-buttons">
+  <button id="email-submit-btn" type="submit">Send</button>
+  <a class="login-skip" href="/">
+    <i class="fa fa-angle-double-left" aria-hidden="true"></i> Back to login
+  </a>
+</div>
+{% endblock %}
