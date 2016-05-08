@@ -13,3 +13,7 @@
 const Route = use('Route')
 
 Route.get('/', 'HomeController.index')
+
+Route.post('/signin', function * (request, response) {
+  response.send("Hello!");
+});
