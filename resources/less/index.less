@@ -1,6 +1,6 @@
 .login-page {
   background-image:
-    linear-gradient(to top, @color-purple, @color-pink);
+    radial-gradient(@color-pink, @color-purple);
   width: 100vw;
   height: 100vh;
 
@@ -31,7 +31,7 @@
       bottom: -2px;
       display: block;
       width: 100%;
-      border-bottom: 1px solid lighten(@color-purple, 10%);
+      border-bottom: 1px solid rgba(red(@color-purple-light), green(@color-purple-light), blue(@color-purple-light), 0.4);
     }
 
     h1 {
@@ -69,6 +69,7 @@
 
       i.fa {
         margin-right: 6px;
+        font-size: 1.2em;
       }
 
       a {
@@ -97,8 +98,8 @@
 
       &:focus {
         outline: none;
+        color: @color-white;
         border-color: @color-purple-lighter;
-        background: rgba(red(@color-purple-lighter), green(@color-purple-lighter), blue(@color-purple-lighter), 0.4);
       }
     }
 
