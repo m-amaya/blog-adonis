@@ -13,11 +13,12 @@
   font-size: 14px;
 
   .title {
-    background: darken(@color-purple, 4%);
     color: @color-white;
     padding: 8px 10px;
     font-weight: 500;
     text-transform: uppercase;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 
     i.fa {
       float: right;
@@ -45,6 +46,14 @@
 .notification-enter {
   opacity: 1;
   animation: fadein 700ms;
+}
+
+.notification-error .title {
+  background: @color-red;
+}
+
+.notification-success .title {
+  background: @color-green;
 }
 
 @keyframes fadein {

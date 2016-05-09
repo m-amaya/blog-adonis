@@ -1,3 +1,6 @@
+ACCTSCREATED        = 0;
+MAXACCOUNTS         = 5;
+
 (function($, cookies) {
 
   var $loginSubmit    = $('#login-submit-btn');
@@ -6,8 +9,12 @@
   var username        = $('#user-name').val();
   var password        = $('#user-pass').val();
   var email           = $('#user-email').val();
-  var acctsCreated    = 0;
-  var MAXACCOUNTS     = 5;
+  var errHash = {
+    101: {
+      error: "reached max",
+      info: "Maximum number of accounts reached. You can only create " + MAXACCOUNTS + " accounts."
+    }
+  }
 
   // Login user
   $loginSubmit.on('click', function(e) {
@@ -24,17 +31,30 @@
   // Create new account
   $newUserSubmit.on('click', function(e) {
     e.preventDefault();
-    if( acctsCreated < MAXACCOUNTS ) {
+    var username        = $('#user-name').val();
+    var password        = $('#user-pass').val();
+
+    if( ACCTSCREATED < MAXACCOUNTS ) {
       $.ajax({
         type: 'post',
         url: '/new_user',
         data: { username: username, password: password }
       }).done(function(data) {
-        acctsCreated += 1;
-        console.log("Data received:", data);
+        if(data.error) {
+          notify(data);
+          return;
+        }
+        notify(null, data);
+        ACCTSCREATED += 1;
       });
     } else {
-      notify(101);
+      notify(errHash[101]);
+      $newUserSubmit.css({
+        textDecoration: 'line-through',
+        cursor: 'not-allowed',
+        color: '#722777',
+        background: '#4d1a51'
+      });
     }
   });
 
@@ -52,25 +72,28 @@
 
   // Notification logic
   var $page = $('.page');
-  var errHash = {
-    101: {
-      err: "reached max",
-      deets: "Maximum number of accounts reached. You can only create " + MAXACCOUNTS + " accounts."
-    }
-  }
 
-  function notify(errNo) {
+  function notify(errorObj, successObj) {
     if( $('.notification').length < 1 ) {
       $page.prepend($('<span class="notification" />')).addClass('notification-container');
     }
 
     var $notification = $('.notification');
 
-    $notification.html(
-      '<div class="title">' + errHash[errNo].err
-      + '<i class="fa fa-close" aria-hidden="true"></i>' +'</div>'
-      + '<div class="info">' + errHash[errNo].deets + '</div>'
-    ).addClass('notification-enter');
+    if(errorObj) {
+      $notification.html(
+        '<div class="title">' + errorObj.error
+        + '<i class="fa fa-close" aria-hidden="true"></i>' +'</div>'
+        + '<div class="info">' + errorObj.info + '</div>'
+      ).addClass('notification-enter notification-error');
+    } else {
+      $notification.html(
+        '<div class="title">Congratulations!'
+        + '<i class="fa fa-close" aria-hidden="true"></i>' +'</div>'
+        + '<div class="info">' + successObj.success + '</div>'
+      ).addClass('notification-enter notification-success');
+    }
+
 
     $notification.find('.fa-close').on('click', function() {
       $page.removeClass('notification-container');
@@ -81,15 +104,6 @@
       $page.removeClass('notification-container');
       $notification.remove();
     });
-
-    if(errNo === 101) {
-      $newUserSubmit.css({
-        textDecoration: 'line-through',
-        cursor: 'not-allowed',
-        color: '#722777',
-        background: '#4d1a51'
-      });
-    }
   };
 
 }(jQuery, Cookies));

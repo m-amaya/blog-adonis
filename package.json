@@ -24,7 +24,8 @@
     "adonis-middleware": "^1.0.5",
     "normalize.css": "^4.1.1",
     "ouch": "^0.2.0-beta",
-    "pg": "^4.5.5"
+    "pg": "^4.5.5",
+    "pg-native": "^1.10.0"
   },
   "autoload": {
     "App": "./app"
