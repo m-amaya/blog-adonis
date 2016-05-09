@@ -2,12 +2,9 @@ ACCTSCREATED        = 0;
 MAXACCOUNTS         = 5;
 
 (function($, cookies) {
-
   var $loginSubmit    = $('#login-submit-btn');
   var $newUserSubmit  = $('#newuser-submit-btn');
   var $emailSubmit    = $('#email-submit-btn');
-  var username        = $('#user-name').val();
-  var password        = $('#user-pass').val();
   var email           = $('#user-email').val();
   var errHash = {
     101: {
@@ -16,15 +13,20 @@ MAXACCOUNTS         = 5;
     }
   }
 
-  // Login user
+  // Login
   $loginSubmit.on('click', function(e) {
     e.preventDefault();
+    var username        = $('#user-name').val();
+    var password        = $('#user-pass').val();
+
     $.ajax({
-      type: 'post',
-      url: '/login',
+      type: 'get',
+      url: '/home',
       data: { username: username, password: password }
     }).done(function(data) {
-      console.log("Data received:", data);
+      if(data.error) {
+        notify(data);
+      }
     });
   });
 
@@ -93,7 +95,6 @@ MAXACCOUNTS         = 5;
         + '<div class="info">' + successObj.success + '</div>'
       ).addClass('notification-enter notification-success');
     }
-
 
     $notification.find('.fa-close').on('click', function() {
       $page.removeClass('notification-container');

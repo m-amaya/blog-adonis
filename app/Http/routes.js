@@ -12,17 +12,16 @@
 */
 const Route = use('Route')
 
-Route.get('/', 'LoginController.login');
+Route.get('/', 'LoginController.index');
 Route.get('/forgot_password', 'LoginController.forgotPass');
 Route.post('/new_user', 'LoginController.createUser');
+Route.get('/home', function * (request, response) {
+  response.send("Read ALL blogs");
+}).middlewares(['auth']);
 
 
 Route.post('/forgot_password/email', function * (request, response) {
   response.send("Sent your email");
-});
-
-Route.get('/home', function * (request, response) {
-  response.send("Read ALL blogs");
 });
 
 Route.post('/login', function * (request, response) {

@@ -4,7 +4,7 @@ const Hash = use('Hash');
 
 class LoginController {
 
-  * login (request, response) {
+  * index (request, response) {
     const view = yield response.view('loginForm')
 
     response.send(view)
