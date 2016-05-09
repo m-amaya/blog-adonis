@@ -129,25 +129,13 @@
     }
 
     button[type="submit"] {
-      position: relative;
-      cursor: pointer;
-      display: block;
-      width: 100%;
-      margin-bottom: 12px;
-      background: darken(@color-purple, 4%);
-      border: 1px solid @color-purple-darker;
-      border-radius: 4px;
+      .button-dark;
       padding: 10px;
-      color: @color-white;
-      text-transform: uppercase;
       font-size: 1em;
       font-weight: 500;
-      box-shadow: inset 0 0 4px @color-purple-darker;
-      transition: background 600ms;
-
-      &:hover {
-        background: @color-purple-darker;
-      }
+      width: 100%;
+      position: relative;
+      margin-bottom: 12px;
     }
 
     .login-skip {

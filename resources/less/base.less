@@ -1,4 +1,5 @@
 @color-pink: #A861A4;
+@color-pink-lighter: lighten(@color-pink, 20%);
 @color-purple: #722777;
 @color-purple-darker: darken(@color-purple, 10%);
 @color-purple-light: lighten(@color-purple, 30%);
@@ -8,6 +9,7 @@
 @color-green: #326358;
 
 @desktop-breakpoint: 760px;
+@mobile-breakpoint:  500px;
 
 // Helpers
 
@@ -17,10 +19,44 @@
   max-width: 400px;
 }
 
+.button-light {
+  cursor: pointer;
+  display: block;
+  background: #fff;
+  border: 1px solid @color-purple;
+  border-radius: 4px;
+  color: @color-purple;
+  text-transform: uppercase;
+  box-shadow: inset 0 0 3px @color-purple-lighter;
+  transition: background 600ms;
+
+  &:hover {
+    background: lighten(@color-white, 6%);
+  }
+}
+
+.button-dark {
+  cursor: pointer;
+  display: block;
+  background: darken(@color-purple, 4%);
+  border: 1px solid @color-purple-darker;
+  border-radius: 4px;
+  color: @color-white;
+  text-transform: uppercase;
+  box-shadow: inset 0 0 4px @color-purple-darker;
+  transition: background 600ms;
+
+  &:hover {
+    background: @color-purple-darker;
+  }
+}
+
 // Imports
 
 @import "./index.less";
 @import "./notification.less";
+@import "./me.less";
+@import "./tile.less";
 
 // Base Styles
 
@@ -33,7 +69,7 @@ body {
 	font-size: 0.95em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-	background: @color-white;
+	background: #fff;
 
 	@media screen and (max-width: @desktop-breakpoint) {
 		font-size: 0.85em;
@@ -51,21 +87,92 @@ body {
 
 .page {
   padding-top: 22px;
+
+  &.me-page {
+    padding-top: 80px;
+    padding-bottom: 50px;
+
+    @media screen and (max-width: @mobile-breakpoint) {
+      padding-top: 134px;
+    }
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid @color-purple-lighter;
+  padding: 10px 12px;
+  z-index: 100;
+
+  @media screen and (max-width: @mobile-breakpoint) {
+    padding-top: 40px;
+    padding-bottom: 18px;
+  }
+
+  .logo {
+    display: inline-block;
+    margin: 0;
+    font-family: 'Arvo', serif;
+    font-size: 2.2em;
+    text-transform: uppercase;
+    color: @color-purple;
+    text-shadow:
+      2px 2px rgba(red(@color-white), green(@color-white), blue(@color-white), 1),
+      4px 4px rgba(red(@color-white), green(@color-white), blue(@color-white), 0.8);
+
+    @media screen and (max-width: @mobile-breakpoint) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .nav-buttons {
+    display: table;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    padding: 0 12px;
+    border-collapse: separate;
+    border-spacing: 8px;
+
+    a {
+      vertical-align: middle;
+      text-decoration: none;
+      padding: 8px 12px;
+      font-size: 0.9em;
+      text-align: center;
+    }
+
+    a.heavy-link {
+      .button-dark;
+      display: table-cell;
+    }
+
+    a.light-link {
+      .button-light;
+      display: table-cell;
+    }
+
+    i.fa {
+      margin-right: 6px;
+    }
+
+    @media screen and (max-width: @mobile-breakpoint) {
+      position: relative;
+    }
+  }
 }
 
 footer {
 	position: fixed;
 	bottom: 0;
 	padding: 8px;
-	background: @color-purple-darker;
 	width: 100%;
-	color: @color-purple-lighter;
-	border-top: 1px solid @color-purple-lighter;
-	font-size: 14px;
-
-	a {
-		color: @color-purple-lighter;
-	}
 
 	.framework-info {
 		float: right;
@@ -87,4 +194,21 @@ footer {
 			float: none;
 		}
 	}
+}
+
+.footer-login {
+  background: @color-purple-darker;
+  color: @color-purple-lighter;
+	border-top: 1px solid @color-purple-lighter;
+	font-size: 14px;
+
+	a {
+		color: @color-purple-lighter;
+	}
+}
+
+.footer-me {
+  color: @color-purple;
+  background: #fff;
+  border-top: 1px solid @color-purple-lighter;
 }

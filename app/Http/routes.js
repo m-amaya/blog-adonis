@@ -20,8 +20,9 @@ Route.get('/login', 'LoginController.login').middlewares(['auth']);
 
 Route.get('/me', function * (request, response) {
   const username = yield request.session.get('username');
+  const view = yield response.view('me', { name: username });
 
-  response.send(`Welcome ${username}! You are now logged in.`);
+  response.send(view);
 }).middlewares(['authSession']);
 
 

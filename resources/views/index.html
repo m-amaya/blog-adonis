@@ -6,14 +6,14 @@
 	<title>{% block title %}{% endblock %}</title>
 	<link rel="stylesheet" type="text/css" href="/normalize.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
-	<link href='https://fonts.googleapis.com/css?family=Arvo:700|Roboto:400,300,500,700|Kalam:400,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arvo:700|Roboto:400,300,500,700|Kalam:400,300|Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/style.min.css">
 </head>
 <body>
 	{% block content %}
 	{% endblock %}
 
-	<footer>
+	<footer {% block footerClass %}{% endblock %}>
 		<span class="demo-info">&copy; 2016 by <a href="https://github.com/m-amaya" target="_blank">m-amaya</a> under MIT license. For demonstration purposes only.</span>
 		<span class="framework-info">
 			<a href="http://adonisjs.com/" target="_blank"><i class="fa fa-share" aria-hidden="true"></i> uses Adonis v2.0.9</a>

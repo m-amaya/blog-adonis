@@ -1,0 +1,157 @@
+.post-new {
+  .button-dark;
+  border: 1px solid @color-white;
+  box-shadow: 1px 1px 4px @color-purple-darker;
+  padding: 12px;
+  margin-bottom: 20px;
+
+  h3 {
+    text-align: center;
+    font-weight: 300;
+    text-transform: capitalize;
+    margin: 0;
+
+    i.fa {
+      margin-right: 6px;
+    }
+  }
+}
+
+.post {
+  border-bottom: 1px solid @color-white;
+  padding: 22px 0 38px;
+
+  @media screen and (max-width: @mobile-breakpoint) {
+    padding: 14px 0 6px;
+  }
+
+  &:hover {
+    .post-title,
+    .post-content,
+    .post-content::before {
+      color: @color-purple-darker;
+    }
+
+    .icon-group {
+      color: @color-pink-lighter;
+    }
+
+    .post-title {
+      text-decoration: underline;
+    }
+
+    .post-byline {
+      color: @color-pink-lighter;
+
+      .byline-date {
+        border: 1px solid @color-white;
+        color: @color-pink-lighter;
+      }
+    }
+  }
+
+  .post-title {
+    margin: 0;
+    font-family: 'Arvo',serif;
+    font-size: 1.5em;
+    padding-bottom: 8px;
+    color: greyscale(@color-purple-darker);
+  }
+
+  .post-byline {
+    //font-family: 'Roboto Slab',serif;
+    font-size: 0.95em;
+    color: greyscale(@color-pink-lighter);
+    margin-bottom: 22px;
+
+    i.fa {
+      margin-left: 2px;
+      margin-right: 5px;
+    }
+
+    .byline-date {
+      margin-left: 2px;
+      border: 1px solid greyscale(@color-white);
+      color: greyscale(@color-pink-lighter);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.8em;
+    }
+
+    @media screen and (max-width: @desktop-breakpoint) {
+      display: none;
+    }
+  }
+
+  .post-content {
+    //font-family: 'Roboto Slab',serif;
+    color: greyscale(@color-purple-darker);
+    position: relative;
+    text-align: justify;
+    height: 92px;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(transparent, #fff);
+    }
+
+    @media screen and (max-width: @desktop-breakpoint) {
+      height: 85px;
+    }
+
+    @media screen and (max-width: @mobile-breakpoint) {
+      height: 53px;
+      padding-right: 50px;
+
+      &::before {
+        content: "\f105";
+        font-family: "FontAwesome";
+        font-size: 1.8em;
+        color: greyscale(@color-purple-darker);
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+  .icon-group {
+    margin-bottom: 20px;
+    margin-right: 10px;
+    display: block;
+    text-align: right;
+    font-size: 0.85em;
+    color: greyscale(@color-pink-lighter);
+
+    i.fa {
+      margin-left: 4px;
+    }
+
+    @media screen and (max-width: @mobile-breakpoint) {
+      margin-bottom: 0;
+    }
+  }
+
+  .post-tags {
+    margin-top: 27px;
+    font-size: 0.8em;
+
+    .tag {
+      border: 1px solid greyscale(@color-white);
+      color: greyscale(@color-pink-lighter);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    @media screen and (max-width: @mobile-breakpoint) {
+      display: none;
+    }
+  }
+}

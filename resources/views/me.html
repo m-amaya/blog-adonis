@@ -1,0 +1,145 @@
+{% extends 'index' %}
+
+{% block title %}
+  Blog.ly | {{name}}
+{% endblock %}
+
+{% block content %}
+<header>
+  <h1 class="logo">Blog.ly</h1>
+  <div class="nav-buttons">
+    <a class="light-link" href="#">
+      <i class="fa fa-pencil" aria-hidden="true"></i>Write</a>
+    <a class="light-link" href="#">
+      <i class="fa fa-bookmark" aria-hidden="true"></i>Read</a>
+    <a class="heavy-link" href="#">
+      <i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+  </div>
+</header>
+
+<div class="page me-page">
+  <div class="container">
+    <div class="me-welcome">
+      <h1>Hello, {{name}}</h1>
+      <div class="me-byline">
+        <span class="me-byline-group">
+          Total Posts
+          <span class="me-byline-date">0</span>
+        </span>
+        <span class="me-byline-group">
+          Last Posted
+          <span class="me-byline-date">
+            <span>03.</span>
+            <span>11.</span>
+            <span>1990</span>
+          </span>
+        </span>
+      </div>
+    </div>
+    <div class="me-content">
+      <div class="me-column me-column-1">
+        <div class="post-new">
+          <h3>
+            <i class="fa fa-pencil" aria-hidden="true"></i>Start New
+          </h3>
+        </div>
+        <h2 class="me-tile-title">
+          <i class="fa fa-angle-double-down"></i>Your Posts</h2>
+        <div class="me-title-content">
+          <div class="post">
+            <span class="icon-group">
+              <i class="fa fa-star"></i> 22
+              <i class="fa fa-thumbs-up"></i> 14
+              <i class="fa fa-bookmark"></i> 6
+            </span>
+            <h3 class="post-title">Johnny and His Dog</h3>
+            <div class="post-byline">
+              <i class="fa fa-angle-right"></i>Last updated
+              <span class="byline-date">
+                <span>03.</span>
+                <span>11.</span>
+                <span>1990</span>
+              </span>
+            </div>
+            <div class="post-content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+            <div class="post-tags">
+              <span class="tag">adventure</span>
+              <span class="tag">passion</span>
+              <span class="tag">life</span>
+              <span class="tag">thoughts</span>
+            </div>
+          </div>
+          <div class="post">
+            <span class="icon-group">
+              <i class="fa fa-star"></i> 22
+              <i class="fa fa-thumbs-up"></i> 14
+              <i class="fa fa-bookmark"></i> 6
+            </span>
+            <h3 class="post-title">Johnny and His Dog</h3>
+            <div class="post-byline">
+              <i class="fa fa-angle-right"></i>Last updated
+              <span class="byline-date">
+                <span class="byline-dark">XX</span>
+                <span class="byline-dark">XX</span>
+                <span class="byline-dark">XXXX</span>
+              </span>
+            </div>
+            <div class="post-content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+            <div class="post-tags">
+              <span class="tag">adventure</span>
+              <span class="tag">passion</span>
+              <span class="tag">life</span>
+              <span class="tag">thoughts</span>
+            </div>
+          </div>
+          <div class="post">
+            <span class="icon-group">
+              <i class="fa fa-star"></i> 22
+              <i class="fa fa-thumbs-up"></i> 14
+              <i class="fa fa-bookmark"></i> 6
+            </span>
+            <h3 class="post-title">Johnny and His Dog</h3>
+            <div class="post-byline">
+              <i class="fa fa-angle-right"></i>Last updated
+              <span class="byline-date">
+                <span class="byline-dark">XX</span>
+                <span class="byline-dark">XX</span>
+                <span class="byline-dark">XXXX</span>
+              </span>
+            </div>
+            <div class="post-content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+            <div class="post-tags">
+              <span class="tag">adventure</span>
+              <span class="tag">passion</span>
+              <span class="tag">life</span>
+              <span class="tag">thoughts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="me-column me-column-2">
+        <div class="me-content">
+          <div class="me-row">
+            <h2 class="me-tile-title">
+              <i class="fa fa-angle-double-down"></i>Inspiration</h2>
+          </div>
+          <div class="me-row">
+            <h2 class="me-tile-title">
+              <i class="fa fa-angle-double-down"></i>Your Favorites</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footerClass %}
+  class="footer-me"
+{% endblock %}
