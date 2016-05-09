@@ -55,6 +55,7 @@
     width: 100%;
 
     .me-tile-title {
+      position: relative;
       padding-top: 12px;
       font-family: 'Roboto Slab', serif;
       font-weight: 300;
@@ -66,6 +67,16 @@
         padding-left: 8px;
         padding-right: 8px;
       }
+
+      a {
+        position: absolute;
+        text-transform: capitalize;
+        display: inline-block;
+        right: 10px;
+        bottom: 8px;
+        font-size: 0.56em;
+        font-weight: 600;
+      }
     }
 
     .me-row {
@@ -74,7 +85,7 @@
 
     .me-column {
       display: table-cell;
-      padding: 0px 8px;
+      padding: 0px 30px;
 
       &.me-column-1 {
         width: 35%;
@@ -85,6 +96,8 @@
       }
 
       @media screen and (max-width: @desktop-breakpoint) {
+        padding: 0px 8px;
+
         &.me-column-1,
         &.me-column-2 {
           width: 50%;
@@ -100,6 +113,22 @@
         &.me-column-2 {
           width: 100%;
         }
+
+        &.me-column-2 {
+          padding: 0;
+        }
+      }
+    }
+
+    .me-favorites {
+      .icon-group {
+        position: absolute;
+        top: -4px;
+        right: 0;
+        color: @color-purple-darker;
+      }
+      i.fa-bookmark {
+        font-size: 2em;
       }
     }
   }

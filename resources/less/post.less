@@ -18,8 +18,13 @@
 }
 
 .post {
+  position: relative;
   border-bottom: 1px solid @color-white;
   padding: 22px 0 38px;
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   @media screen and (max-width: @mobile-breakpoint) {
     padding: 14px 0 6px;
@@ -84,7 +89,6 @@
   }
 
   .post-content {
-    //font-family: 'Roboto Slab',serif;
     color: greyscale(@color-purple-darker);
     position: relative;
     text-align: justify;
@@ -152,6 +156,27 @@
 
     @media screen and (max-width: @mobile-breakpoint) {
       display: none;
+    }
+  }
+}
+
+.post-topic-group {
+  padding: 30px 10px;
+
+  .post-topic {
+    text-transform: lowercase;
+    display: inline-block;
+    border: 1px solid @color-purple-darker;
+    background: fadeout(@color-purple, 40%);
+    color: @color-white;
+    border-radius: 4px;
+    padding: 14px 35px;
+    font-size: 1.2em;
+    margin: 4px 2px;
+    font-weight: 300;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
