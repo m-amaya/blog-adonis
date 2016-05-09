@@ -1,7 +1,7 @@
 ACCTSCREATED        = 0;
 MAXACCOUNTS         = 5;
 
-(function($, cookies) {
+(function($, cookies, window) {
   var $loginSubmit    = $('#login-submit-btn');
   var $newUserSubmit  = $('#newuser-submit-btn');
   var $emailSubmit    = $('#email-submit-btn');
@@ -21,12 +21,14 @@ MAXACCOUNTS         = 5;
 
     $.ajax({
       type: 'get',
-      url: '/home',
+      url: '/login',
       data: { username: username, password: password }
     }).done(function(data) {
       if(data.error) {
         notify(data);
+        return;
       }
+      window.location.href = "/me";
     });
   });
 
@@ -107,4 +109,4 @@ MAXACCOUNTS         = 5;
     });
   };
 
-}(jQuery, Cookies));
+}(jQuery, Cookies, window));

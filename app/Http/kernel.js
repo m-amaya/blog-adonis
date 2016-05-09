@@ -28,7 +28,8 @@ const globalMiddleware = [
 |
 */
 const namedMiddleware = {
-  'auth': 'App/Http/Middleware/Authorize'
+  'auth': 'App/Http/Middleware/Authorize',
+  'authSession': 'App/Http/Middleware/AuthSession'
 }
 
 /*

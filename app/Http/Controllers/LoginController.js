@@ -10,6 +10,10 @@ class LoginController {
     response.send(view)
   }
 
+  * login (request, response) {
+    response.ok('Authorized');
+  }
+
   * forgotPass (request, response) {
     const view = yield response.view('forgotPassForm')
 
@@ -32,7 +36,7 @@ class LoginController {
     if(userExists.length > 0) {
       response.json({
         error: 'User already exists',
-        info: `Whoops! Looks like ${username} is already taken. How about another one?`
+        info: `Whoops! Looks like ${username} is already taken. How about another name?`
       });
       return;
     }

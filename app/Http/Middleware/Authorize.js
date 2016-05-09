@@ -28,6 +28,7 @@ class Authorize {
       return;
     }
 
+    yield request.session.put('username', credentials.username);
     yield next;
   }
 
