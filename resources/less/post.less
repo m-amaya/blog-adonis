@@ -148,6 +148,8 @@
     font-size: 0.8em;
 
     .tag {
+      display: inline-block;
+      margin: 2px 0;
       border: 1px solid greyscale(@color-white);
       color: greyscale(@color-pink-lighter);
       padding: 4px 8px;
@@ -174,9 +176,12 @@
     font-size: 1.2em;
     margin: 4px 2px;
     font-weight: 300;
+    transition: background 500ms;
+    transition: color 300ms;
 
     &:hover {
-      text-decoration: underline;
+      color: @color-purple-darker;
+      background: fadeout(@color-teal, 30%);
     }
   }
 }
